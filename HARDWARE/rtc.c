@@ -5,9 +5,13 @@
 /* global variable */
 RTC_HandleTypeDef RTC_Handle;
 RTC_TimeTypeDef RTC_TIME_Handle;
+RTC_DateTypeDef RTC_DATE_Handle;
+RTC_GetTimeTypedef RTC_GetTime;
+RTC_GetCalendarTypedef RTC_GetCalendar;
 
 
-void rtc_domain_access(void){
+
+static void rtc_domain_access(void){
 	
 	__HAL_RCC_PWR_CLK_ENABLE();
 	HAL_PWR_EnableBkUpAccess();
@@ -16,13 +20,13 @@ void rtc_domain_access(void){
 }
 
 
-HAL_StatusTypeDef rtc_Init(void){
+HAL_StatusTypeDef RTC_Init(void){
 	
 	rtc_domain_access();
 
 	RTC_Handle.Instance = RTC;	
 	RTC_Handle.Init.HourFormat =  RTC_HOURFORMAT_24;
-	RTC_Handle.Init.AsynchPrediv = 0X7F;  //127
+	RTC_Handle.Init.AsynchPrediv = 0x7F;  //127
 	RTC_Handle.Init.SynchPrediv = 0xFF; //255
 	RTC_Handle.Init.OutPut = RTC_OUTPUT_DISABLE;
 	RTC_Handle.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
@@ -34,8 +38,9 @@ HAL_StatusTypeDef rtc_Init(void){
 		return HAL_ERROR;
 	else{
 		uint32_t rtc_backup_R0 = HAL_RTCEx_BKUPRead(&RTC_Handle,RTC_BKP_DR0);
-		if(rtc_backup_R0 == 0x0505){ //first time configuration, need to set time
+		if(rtc_backup_R0 != 0x0505){ //first time configuration, need to set time
 			RTC_setTime(17,27,0,RTC_HOURFORMAT12_PM);
+			RTC_setDate(19,6,5,3);
 			HAL_RTCEx_BKUPWrite(&RTC_Handle,RTC_BKP_DR0,0x0505); //write a conf-flag into BACKUO_0_REG		
 		}
 	}
@@ -52,21 +57,40 @@ HAL_StatusTypeDef RTC_setTime(u8 hour,u8 min,u8 second,u8 timeFormat){
 	return HAL_RTC_SetTime(&RTC_Handle,&RTC_TIME_Handle,RTC_FORMAT_BIN);
 }
 
-RTC_TimeTypedef* RTC_read_Time(void){
+HAL_StatusTypeDef RTC_read_Time(void){
 	HAL_StatusTypeDef result = HAL_RTC_GetTime(&RTC_Handle, &RTC_TIME_Handle, RTC_FORMAT_BIN);
 	if (result == HAL_ERROR)
-		return NULL;
+		return HAL_ERROR;
 	else{
-		RTC_TimeTypedef* RTC_Time = (RTC_TimeTypedef*)malloc(sizeof(RTC_TimeTypedef));
-		RTC_Time->hour = RTC_TIME_Handle.Hours;
-		RTC_Time->min = RTC_TIME_Handle.Minutes;
-		RTC_Time->sec = RTC_TIME_Handle.Seconds;
-		return RTC_Time;
+		RTC_GetTime.hour = RTC_TIME_Handle.Hours;
+		RTC_GetTime.min = RTC_TIME_Handle.Minutes;
+		RTC_GetTime.sec = RTC_TIME_Handle.Seconds;
+		return HAL_OK;
 	}
 }
 
+HAL_StatusTypeDef RTC_setDate(u8 Year,u8 Month,u8 Date,u8 WeekDay){
+	
+	RTC_DATE_Handle.Year = Year;
+	RTC_DATE_Handle.Month = Month;
+	RTC_DATE_Handle.Date = Date;
+	RTC_DATE_Handle.WeekDay = WeekDay;
+	return HAL_RTC_SetDate (&RTC_Handle, &RTC_DATE_Handle, RTC_FORMAT_BIN);
+}
 
-
+HAL_StatusTypeDef RTC_read_Date(void){
+	
+	HAL_StatusTypeDef result = HAL_RTC_GetDate(&RTC_Handle, &RTC_DATE_Handle,RTC_FORMAT_BIN);
+	if (result == HAL_ERROR)
+		return HAL_ERROR;
+	else{
+		RTC_GetCalendar.Year = RTC_DATE_Handle.Year;
+		RTC_GetCalendar.Month = RTC_DATE_Handle.Month;
+		RTC_GetCalendar.Date = RTC_DATE_Handle.Date;
+		RTC_GetCalendar.WeekDay = RTC_DATE_Handle.WeekDay;
+		return HAL_OK;
+	}
+}
 
 
 

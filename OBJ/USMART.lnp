@@ -36,7 +36,7 @@
 "..\obj\usmart.o"
 "..\obj\usmart_str.o"
 "..\obj\usmart_config.o"
---strict --scatter "..\OBJ\USMART.sct"
+--library_type=microlib --strict --scatter "..\OBJ\USMART.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "..\OBJ\USMART.map" -o ..\OBJ\USMART.axf

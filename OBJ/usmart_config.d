@@ -79,3 +79,4 @@
 ..\obj\usmart_config.o: ..\HARDWARE\SDRAM\sdram.h
 ..\obj\usmart_config.o: ..\HARDWARE\LCD\ltdc.h
 ..\obj\usmart_config.o: ..\HARDWARE\LED\led.h
+..\obj\usmart_config.o: ..\HARDWARE\rtc.h
