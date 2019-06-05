@@ -922,13 +922,12 @@ ARM Macro Assembler    Page 15
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=..\obj\startup_stm32f429xx.d -o..\obj\startup_stm32f429xx.o -I"
-G:\work\stm32\STM32F429_Study_Files\阿波罗STM32F429 资料盘(A盘)\4，程序源码\2，
-标准例程-HAL库版本\实验15 USMART调试试验\USER\RTE" -IC:\Keil_v5\ARM\PACK\Keil\S
-TM32F4xx_DFP\2.9.0 -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\ST
-M32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVIS
-ION_VERSION SETA 514" --predefine="STM32F429xx SETA 1" --list=..\obj\startup_st
-m32f429xx.lst ..\CORE\startup_stm32f429xx.s
+erwork --depend=..\obj\startup_stm32f429xx.d -o..\obj\startup_stm32f429xx.o -IG
+:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE -IC:\Keil_v
+5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0 -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5
+\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --
+predefine="__UVISION_VERSION SETA 514" --predefine="STM32F429xx SETA 1" --list=
+..\obj\startup_stm32f429xx.lst ..\CORE\startup_stm32f429xx.s
 
 
 

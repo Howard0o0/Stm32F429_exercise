@@ -32,9 +32,15 @@ void LED_Init(void)
 
 void LED_0_Ctrl(uint8_t status){
 	if(status == 0)
+		LED0 = 1;
+	else
 		LED0 = 0;
 }
 
 void LED_1_Ctrl(uint8_t status){
-	
+	if(status == 0)
+		LED1 = 1;
+	else
+		LED1 = 0;
 }
+

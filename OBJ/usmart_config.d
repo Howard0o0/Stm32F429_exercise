@@ -78,3 +78,4 @@
 ..\obj\usmart_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\usmart_config.o: ..\HARDWARE\SDRAM\sdram.h
 ..\obj\usmart_config.o: ..\HARDWARE\LCD\ltdc.h
+..\obj\usmart_config.o: ..\HARDWARE\LED\led.h

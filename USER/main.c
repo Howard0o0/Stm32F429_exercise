@@ -45,7 +45,7 @@ int main(void)
 	LCD_ShowString(30,110,200,16,16,"2015/12/10");	   
   	while(1) 
 	{		 	  
-		LED0=!LED0;					 
-		delay_ms(500);	
+//		LED0=!LED0;					 
+//		delay_ms(500);	
 	} 
 }
