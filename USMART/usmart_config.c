@@ -20,6 +20,7 @@ struct _m_usmart_nametab usmart_nametab[]=
 	(void*)read_addr,"u32 read_addr(u32 addr)",
 	(void*)write_addr,"void write_addr(u32 addr,u32 val)",	 
 	(void*)RTC_setTime,"HAL_StatusTypeDef RTC_setTime(u8 hour,u8 min,u8 second,u8 timeFormat)",
+	(void*)RTC_SetAlarm_A,"HAL_StatusTypeDef RTC_SetAlarm_A(u8 Date_WeekDay,u8 Hour,u8 Minute,u32 DateWeekDaySel)",
 #endif		   
 //	(void*)delay_ms,"void delay_ms(u16 nms)",
 // 	(void*)delay_us,"void delay_us(u32 nus)",	 

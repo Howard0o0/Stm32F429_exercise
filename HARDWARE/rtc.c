@@ -92,5 +92,38 @@ HAL_StatusTypeDef RTC_read_Date(void){
 	}
 }
 
+HAL_StatusTypeDef RTC_SetAlarm_A(u8 Date_WeekDay,u8 Hour,u8 Minute,u32 DateWeekDaySel){
+	
+	RTC_AlarmTypeDef rtc_alarm_init_structure;
+	rtc_alarm_init_structure.AlarmMask = RTC_ALARMMASK_NONE;
+	rtc_alarm_init_structure.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_NONE;
+	rtc_alarm_init_structure.AlarmDateWeekDaySel = DateWeekDaySel;
+	rtc_alarm_init_structure.AlarmDateWeekDay = Date_WeekDay;
+	rtc_alarm_init_structure.Alarm = RTC_ALARM_A;
+	
+	rtc_alarm_init_structure.AlarmTime.Hours = Hour;
+	rtc_alarm_init_structure.AlarmTime.Minutes = Minute;
+	rtc_alarm_init_structure.AlarmTime.Seconds = 0;
+	rtc_alarm_init_structure.AlarmTime.SubSeconds = 0;
+	if(Hour <= 12)
+		rtc_alarm_init_structure.AlarmTime.TimeFormat = RTC_HOURFORMAT12_AM;
+	else
+		rtc_alarm_init_structure.AlarmTime.TimeFormat = RTC_HOURFORMAT12_PM;
+	
+	
+	HAL_StatusTypeDef set_alarm_result = HAL_RTC_SetAlarm_IT(&RTC_Handle, &rtc_alarm_init_structure,RTC_FORMAT_BIN);
+	HAL_NVIC_SetPriority(RTC_Alarm_IRQn,0x01,0x02); //抢占优先级1,子优先级2
+    HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
+	
+	
+	return set_alarm_result;
+}
 
+void RTC_Alarm_IRQHandler(void){
+	 HAL_RTC_AlarmIRQHandler(&RTC_Handle);
+}
+
+void HAL_RTC_AlarmAEventCallback (RTC_HandleTypeDef *hrtc){
+	printf("RTC_Alarm_A triggered!!\r\n");
+}
 

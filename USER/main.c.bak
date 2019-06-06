@@ -42,11 +42,15 @@ int main(void)
 	LCD_ShowString(30,90,200,16,16,"ATOM@ALIENTEK");
 	LCD_ShowString(30,110,200,16,16,"2015/12/10");
 
+	//Init RTC
 	HAL_StatusTypeDef rtc_init_result = RTC_Init();
 	if(rtc_init_result != HAL_OK){
 		printf("RTC Init error!\r\n");
 		return 0;
 	}
+	//Set RTC_Alarm_A
+	if(RTC_SetAlarm_A(6,16,18,RTC_ALARMDATEWEEKDAYSEL_DATE) != HAL_OK)
+		printf("RTC_ALARM set failed!\r\n");
 
   	while(1) 
 	{		
