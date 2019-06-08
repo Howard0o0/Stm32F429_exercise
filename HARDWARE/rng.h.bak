@@ -1,0 +1,11 @@
+#ifndef STM32F429_RNG
+#define STM32F429_RNG
+
+#include "sys.h"
+
+HAL_StatusTypeDef RNG_Init(void);
+uint32_t RNG_GetRandom(void);
+
+
+#endif
+

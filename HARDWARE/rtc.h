@@ -3,6 +3,14 @@
 
 #include "sys.h"
 
+/*
+==========================================How to use this driver==============================
+1. Init by calling RTC_Init()
+2. set time&&date by calling RTC_setTime() and RTC_setDate(), if first time use
+3. everythime,you have to read date after read time,no matter if you need date or not
+==============================================================================================
+*/
+
 typedef struct{
 	uint8_t hour;
 	uint8_t min;
@@ -58,6 +66,7 @@ HAL_StatusTypeDef RTC_read_Date(void);
 @return: HAL_OK || HAL_ERROR 
 */
 HAL_StatusTypeDef RTC_SetAlarm_A(u8 Date_WeekDay,u8 Hour,u8 Minute,u32 DateWeekDaySel);
+
 
 //################################################################################################//
 /*#############################################################################################*/

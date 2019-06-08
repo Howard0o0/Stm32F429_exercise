@@ -1,0 +1,41 @@
+#include "rng.h"
+
+
+/*  global variable */
+RNG_HandleTypeDef RNG_Handler;
+uint32_t random_data;
+
+
+HAL_StatusTypeDef RNG_Init(void){
+	
+ 	RNG_Handler.Instance = RNG;
+	HAL_StatusTypeDef init_result = HAL_RNG_Init(&RNG_Handler);
+	
+	// drop first random
+	HAL_RNG_GenerateRandomNumber(&RNG_Handler,&random_data);
+	
+	return init_result;
+}
+
+void HAL_RNG_MspInit(RNG_HandleTypeDef *hrng){
+	
+	 __HAL_RCC_RNG_CLK_ENABLE();
+}
+
+uint32_t RNG_GetRandom(void){
+	
+	uint32_t random_data_temp;
+	HAL_RNG_GenerateRandomNumber(&RNG_Handler,&random_data_temp);
+	while(random_data_temp == random_data)
+		HAL_RNG_GenerateRandomNumber(&RNG_Handler,&random_data_temp);
+	
+	return random_data_temp;
+}
+
+int RNG_GetRangeRandom(int min,int max){
+	
+	uint32_t u32_random = RNG_GetRandom();
+	int range_random = u32_random%(max-min+1) + min;
+	return range_random;
+	
+}

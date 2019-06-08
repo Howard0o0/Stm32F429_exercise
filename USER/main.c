@@ -7,7 +7,7 @@
 #include "sdram.h"
 #include "usmart.h"
 #include "rtc.h"
-
+#include "rng.h"
 
 
 
@@ -51,6 +51,13 @@ int main(void)
 	//Set RTC_Alarm_A
 	if(RTC_SetAlarm_A(6,16,25,RTC_ALARMDATEWEEKDAYSEL_DATE) != HAL_OK)
 		printf("RTC_ALARM set failed!\r\n");
+	
+	//Init RNG
+	if(RNG_Init() != HAL_OK){
+		printf("RNG Init Failed! \r\n");
+		return 0;
+	}
+		
 
   	while(1) 
 	{		
@@ -58,7 +65,10 @@ int main(void)
 		RTC_read_Date();
 		printf("RTC_Time: %d:%d:%d  ",RTC_GetTime.hour,RTC_GetTime.min,RTC_GetTime.sec);
 		printf("%d-%d-%d week[%d] \r\n",RTC_GetCalendar.Year,RTC_GetCalendar.Month,RTC_GetCalendar.Date,RTC_GetCalendar.WeekDay);
-		LED0=!LED0;					 
+		LED0=!LED0;		
+			
+		int range_random = RNG_GetRangeRandom(-5,-1);
+		printf("RNG_Random data: %d\r\n",range_random);
 		delay_ms(500);
 		delay_ms(500);			
 	} 
