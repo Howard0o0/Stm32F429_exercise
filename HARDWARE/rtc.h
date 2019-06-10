@@ -73,6 +73,5 @@ HAL_StatusTypeDef RTC_SetAlarm_A(u8 Date_WeekDay,u8 Hour,u8 Minute,u32 DateWeekD
 
 
 
-static void rtc_domain_access(void);
 
 #endif

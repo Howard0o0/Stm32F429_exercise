@@ -35,6 +35,7 @@
 "..\obj\ltdc.o"
 "..\obj\rtc.o"
 "..\obj\rng.o"
+"..\obj\pwr.o"
 "..\obj\usmart.o"
 "..\obj\usmart_str.o"
 "..\obj\usmart_config.o"

@@ -8,7 +8,7 @@
 #include "usmart.h"
 #include "rtc.h"
 #include "rng.h"
-
+#include "pwr.h"
 
 
 
@@ -36,6 +36,7 @@ int main(void)
     KEY_Init();                     //初始化按键
     SDRAM_Init();                   //初始化SDRAM
     LCD_Init();                     //初始化LCD
+	
 	POINT_COLOR=RED;
 	LCD_ShowString(30,50,200,16,16,"Apollo STM32F4/F7");	
 	LCD_ShowString(30,70,200,16,16,"USMART TEST");	
@@ -45,7 +46,7 @@ int main(void)
 	//Init RTC
 	HAL_StatusTypeDef rtc_init_result = RTC_Init();
 	if(rtc_init_result != HAL_OK){
-		printf("RTC Init error!\r\n");
+		printf("RTC Init error!  RTC_Init:%i \r\n",rtc_init_result);
 		return 0;
 	}
 	//Set RTC_Alarm_A
@@ -54,11 +55,12 @@ int main(void)
 	
 	//Init RNG
 	if(RNG_Init() != HAL_OK){
-		printf("RNG Init Failed! \r\n");
+		printf("RNG Init Failed!\r\n");
 		return 0;
 	}
 		
-
+	sleep_mode_init();				//初始化进入待机模式
+	
   	while(1) 
 	{		
 		RTC_read_Time();

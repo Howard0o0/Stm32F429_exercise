@@ -11,18 +11,8 @@ RTC_GetCalendarTypedef RTC_GetCalendar;
 
 
 
-static void rtc_domain_access(void){
-	
-	__HAL_RCC_PWR_CLK_ENABLE();
-	HAL_PWR_EnableBkUpAccess();
-	__HAL_RCC_RTC_CONFIG(RCC_RTCCLKSOURCE_LSE);
-	__HAL_RCC_RTC_ENABLE();
-}
-
 
 HAL_StatusTypeDef RTC_Init(void){
-	
-	rtc_domain_access();
 
 	RTC_Handle.Instance = RTC;	
 	RTC_Handle.Init.HourFormat =  RTC_HOURFORMAT_24;
@@ -36,15 +26,40 @@ HAL_StatusTypeDef RTC_Init(void){
 	
 	if(rtc_init_result != HAL_OK)
 		return HAL_ERROR;
-	else{
-		uint32_t rtc_backup_R0 = HAL_RTCEx_BKUPRead(&RTC_Handle,RTC_BKP_DR0);
-		if(rtc_backup_R0 != 0x0505){ //first time configuration, need to set time
-			RTC_setTime(17,27,0,RTC_HOURFORMAT12_PM);
-			RTC_setDate(19,6,5,3);
-			HAL_RTCEx_BKUPWrite(&RTC_Handle,RTC_BKP_DR0,0x0505); //write a conf-flag into BACKUO_0_REG		
-		}
+	
+	uint32_t rtc_backup_R0 = HAL_RTCEx_BKUPRead(&RTC_Handle,RTC_BKP_DR0);
+	if(rtc_backup_R0 != 0x0505){ //first time configuration, need to set time
+		RTC_setTime(17,27,0,RTC_HOURFORMAT12_PM);
+		RTC_setDate(19,6,5,3);
+		HAL_RTCEx_BKUPWrite(&RTC_Handle,RTC_BKP_DR0,0x0505); //write a conf-flag into BACKUO_0_REG		
 	}
 	return HAL_OK;
+}
+
+void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
+{
+    RCC_OscInitTypeDef RCC_OscInitStruct;
+    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
+
+    __HAL_RCC_PWR_CLK_ENABLE();//使能电源时钟PWR
+	HAL_PWR_EnableBkUpAccess();//取消备份区域写保护
+    
+    RCC_OscInitStruct.OscillatorType=RCC_OSCILLATORTYPE_LSE;//LSE配置
+    RCC_OscInitStruct.PLL.PLLState=RCC_PLL_NONE;
+    RCC_OscInitStruct.LSEState=RCC_LSE_ON;                  //RTC使用LSE
+    HAL_RCC_OscConfig(&RCC_OscInitStruct);
+
+    PeriphClkInitStruct.PeriphClockSelection=RCC_PERIPHCLK_RTC;//外设为RTC
+    PeriphClkInitStruct.RTCClockSelection=RCC_RTCCLKSOURCE_LSE;//RTC时钟源为LSE
+    HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct);
+        
+    __HAL_RCC_RTC_ENABLE();//RTC时钟使能
+	
+	
+//	__HAL_RCC_PWR_CLK_ENABLE();
+//	HAL_PWR_EnableBkUpAccess();
+//	__HAL_RCC_RTC_CONFIG(RCC_RTCCLKSOURCE_LSE);
+//	__HAL_RCC_RTC_ENABLE();
 }
 
 //timeFormat : RTC_HOURFORMAT12_AM/RTC_HOURFORMAT12_PM

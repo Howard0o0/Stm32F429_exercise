@@ -67,7 +67,6 @@ HAL_StatusTypeDef RTC_read_Date(void);
 */
 HAL_StatusTypeDef RTC_SetAlarm_A(u8 Date_WeekDay,u8 Hour,u8 Minute,u32 DateWeekDaySel);
 
-HAL_StatusTypeDef RTC_SetWakeUp
 
 //################################################################################################//
 /*#############################################################################################*/

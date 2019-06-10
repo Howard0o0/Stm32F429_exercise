@@ -1,5 +1,5 @@
 Dependencies for Project 'USMART', Target 'USMART': (DO NOT MODIFY !)
-F (.\main.c)(0x5CFB0C9C)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5CFC8152)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x577640F2)
 I (..\USER\stm32f4xx.h)(0x5776406D)
 I (..\USER\stm32f429xx.h)(0x5776406D)
@@ -80,8 +80,9 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\HARDWARE\SDRAM\sdram.h)(0x577640F2)
 I (..\USMART\usmart.h)(0x577640F2)
 I (..\USMART\usmart_str.h)(0x577640F2)
-I (..\HARDWARE\rtc.h)(0x5CFAFEA9)
+I (..\HARDWARE\rtc.h)(0x5CFC83AA)
 I (..\HARDWARE\rng.h)(0x5CFB0A04)
+I (..\HARDWARE\pwr.h)(0x5CFC71B5)
 F (.\stm32f4xx_it.c)(0x5776406D)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
 I (main.h)(0x5776406D)
 I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5776406C)
@@ -2388,8 +2389,8 @@ I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h)(0x5776406C)
 I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h)(0x5776406C)
 I (..\HARDWARE\LCD\lcd.h)(0x5776406D)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-F (..\HARDWARE\rtc.c)(0x5CF8CD6D)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\rtc.o --omf_browse ..\obj\rtc.crf --depend ..\obj\rtc.d)
-I (..\HARDWARE\rtc.h)(0x5CFAFEA9)
+F (..\HARDWARE\rtc.c)(0x5CFC8534)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\rtc.o --omf_browse ..\obj\rtc.crf --depend ..\obj\rtc.d)
+I (..\HARDWARE\rtc.h)(0x5CFC83AA)
 I (..\SYSTEM\sys\sys.h)(0x577640F2)
 I (..\USER\stm32f4xx.h)(0x5776406D)
 I (..\USER\stm32f429xx.h)(0x5776406D)
@@ -2535,6 +2536,81 @@ I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h)(0x5776406D)
 I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h)(0x5776406C)
 I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h)(0x5776406C)
 I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h)(0x5776406C)
+F (..\HARDWARE\pwr.c)(0x5CFC843A)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\pwr.o --omf_browse ..\obj\pwr.crf --depend ..\obj\pwr.d)
+I (..\HARDWARE\pwr.h)(0x5CFC71B5)
+I (..\SYSTEM\sys\sys.h)(0x577640F2)
+I (..\USER\stm32f4xx.h)(0x5776406D)
+I (..\USER\stm32f429xx.h)(0x5776406D)
+I (..\CORE\core_cm4.h)(0x5776406C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\CORE\core_cmInstr.h)(0x5776406C)
+I (..\CORE\cmsis_armcc.h)(0x5776406C)
+I (..\CORE\core_cmFunc.h)(0x5776406C)
+I (..\CORE\core_cmSimd.h)(0x5776406C)
+I (..\USER\system_stm32f4xx.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5776406C)
+I (..\USER\stm32f4xx_hal_conf.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h)(0x5776406C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cryp.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma2d.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dcmi.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dcmi_ex.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_eth.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sram.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_fmc.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_nor.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_nand.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pccard.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sdram.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hash.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_iwdg.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_ltdc.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_ltdc_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rng.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5CF76CD8)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sai.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sai_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sd.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_sdmmc.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_irda.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_smartcard.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_wwdg.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h)(0x5776406D)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h)(0x5776406C)
+I (..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h)(0x5776406C)
+I (..\HARDWARE\LED\led.h)(0x5CF665C4)
+I (..\SYSTEM\delay\delay.h)(0x5776406C)
 F (..\USMART\usmart.c)(0x577640F2)(-c --cpu Cortex-M4.fp -g -O2 --apcs=interwork --split_sections -I..\CORE -I..\OBJ -I..\USER -I..\HALLIB\STM32F4xx_HAL_Driver\Inc -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\SDRAM -I..\HARDWARE\KEY -I..\USMART -I..\HARDWARE-I G:\work\stm32\Project\stm32F429_Exercise\Stm32F429_exercise\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="514" -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx --C99-o ..\obj\usmart.o --omf_browse ..\obj\usmart.crf --depend ..\obj\usmart.d)
 I (..\USMART\usmart.h)(0x577640F2)
 I (..\USMART\usmart_str.h)(0x577640F2)
@@ -2764,5 +2840,5 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\HARDWARE\SDRAM\sdram.h)(0x577640F2)
 I (..\HARDWARE\LCD\ltdc.h)(0x59AEA256)
 I (..\HARDWARE\LED\led.h)(0x5CF665C4)
-I (..\HARDWARE\rtc.h)(0x5CFAFEA9)
+I (..\HARDWARE\rtc.h)(0x5CFC83AA)
 F (..\readme.txt)(0x577640F1)()

@@ -82,3 +82,4 @@
 ..\obj\main.o: ..\USMART\usmart_str.h
 ..\obj\main.o: ..\HARDWARE\rtc.h
 ..\obj\main.o: ..\HARDWARE\rng.h
+..\obj\main.o: ..\HARDWARE\pwr.h
